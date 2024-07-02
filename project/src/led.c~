@@ -1,0 +1,24 @@
+#include <msp430.h>
+#include "led.h"
+
+#define LED_RED BIT0
+#define LED_GREEN BIT6
+
+void initLEDs() {
+  P1DIR |= (LED_RED | LED_GREEN);
+  P1OUT &= ~(LED_RED | LED_GREEN);
+}
+
+void setRedLED(int state) {
+  if (state)
+    P1OUT |= LED_RED;
+  else
+    P1OUT &= ~LED_RED;
+}
+
+void setGreenLED(int state) {
+  if (state)
+    P1OUT |= LED_GREEN;
+  else
+    P1OUT &= ~LED_GREEN;
+}

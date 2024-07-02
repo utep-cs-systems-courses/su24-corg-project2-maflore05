@@ -16,8 +16,15 @@ int main(void) {
 
 
 void
-__interrupt_vec(WDT_VECTOR) WDT()	/* 250 interrupts/sec */
+__interrupt_vec(WDT_VECTOR) WDT()/* 250 interrupts/sec */
 {
-  P1OUT |= LED_GREEN;
-} 
+  static int green_on = 0;
 
+  if (green_on) {
+    P1OUT &= ~LED_GREEN; // Turn off green LED
+    green_on = 0;
+  } else {
+    P1OUT |= LED_GREEN;  // Turn on green LED
+    green_on = 1;
+  }
+}

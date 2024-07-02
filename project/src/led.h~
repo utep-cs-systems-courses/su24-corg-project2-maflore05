@@ -1,0 +1,8 @@
+#ifndef LED_H_
+#define LED_H_
+
+void initLEDs();
+void setRedLED(int state);
+void setGreenLED(int state);
+
+#endif /* LED_H_ */

@@ -1,0 +1,7 @@
+#ifndef STATE_MACHINE_H_
+#define STATE_MACHINE_H_
+
+void initStateMachine();
+void changeState(int newState);
+
+#endif /* STATE_MACHINE_H_ */

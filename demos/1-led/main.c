@@ -4,9 +4,9 @@
 #include "led.h"
 
 int main(void) {
-  P1DIR |= LEDS;
-  P1OUT &= ~LED_GREEN;
-  P1OUT |= LED_RED;
+  P1DIR |= LEDS;      // Set LED pins as outputs
+  P1OUT |= LED_GREEN; // Turn on the green LED
+  P1OUT |= LED_RED;   // Turn on the red LED
 
   or_sr(0x18);		/* CPU off, GIE on */
 }
