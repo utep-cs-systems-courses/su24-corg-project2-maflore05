@@ -17,7 +17,7 @@ all: Machine.elf
 
 
 #additional rules for files
-Machine.elf: ${COMMON_OBJECTS} led.o main.o state_machine.o ../lib/libTimer.a
+Machine.elf: ${COMMON_OBJECTS} led.o main.o state_machine.o switches.o ../lib/libTimer.a
 	${CC} ${CFLAGS} -o $@ $^
 
 
@@ -29,6 +29,8 @@ clean: $^
 
 
 main.o: led.h
+buzzer.o: buzzer.h
 led.o: led.c led.h
 state_machine.o: state_machine.c state_machine.h led.h
-wdInterruptHandler.o: stateMachines.h
+wdInterruptHandler.o: state_machine.h
+switches.o: switches.c state_machine.h

@@ -1,8 +1,8 @@
 #include <msp430.h>
 #include "state_machine.h"
 #include "led.h"
-//#include "switches.h"
-//#include "buzzer.h"
+#include "switches.h"
+#include "buzzer.h"
 
 
 enum State current_state = START;
