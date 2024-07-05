@@ -38,7 +38,7 @@ void start_state()
 }
 
 // Siren state: creates a siren type sound
-void state_1()
+void state_1_state()
 {
   if(sec_flag){
     toggle_red();
@@ -47,7 +47,7 @@ void state_1()
   }
 }
 
-void state_2()
+void state_2_state()
 {
   if(sec_flag){
     toggle_green();
@@ -55,7 +55,7 @@ void state_2()
   }
 }
 
-void state_3()
+void state_3_state()
 {
   if(sec_flag){
     toggle_green();
@@ -64,7 +64,7 @@ void state_3()
   toggle_red();
 }
 
-void state_4()
+void state_4_state()
 {
   if(sec_flag){
     toggle_red();

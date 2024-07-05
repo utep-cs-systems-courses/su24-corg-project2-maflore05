@@ -17,7 +17,7 @@ all: Machine.elf
 
 
 #additional rules for files
-Machine.elf: ${COMMON_OBJECTS} led.o main.o state_machine.o switches.o ../lib/libTimer.a
+Machine.elf: ${COMMON_OBJECTS} buzzer.o led.o main.o state_machine.o switches.o ../lib/libTimer.a
 	${CC} ${CFLAGS} -o $@ $^
 
 
@@ -28,7 +28,7 @@ clean: $^
 	rm -f *.o *.elf *~
 
 
-main.o: led.h
+main.o: buzzer.h led.h
 buzzer.o: buzzer.h
 led.o: led.c led.h
 state_machine.o: state_machine.c state_machine.h led.h

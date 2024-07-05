@@ -34,26 +34,23 @@ void state_1()
   static int current_note = 1000;   // Current note frequency
 
   // When current note reaches MAX, incrementer subtracts. When it reaches MIN, incrementer adds
-  if(current_note == MAX){
+  if (current_note == MAX) {
     increment = -200;
-  }
-  else if(current_note == MIN){
+  } else if (current_note == MIN) {
     increment = 200;
   }
   buzzer_set_period(current_note);
   current_note += increment;
 }
 
-
 void state_2()
 {
-  int length = 12;
+  int length = 42;
   static int index1 = 0;
-  int notes[12] = {4000, 4000, 4000, 3100, 3100, 3100, 2700, 2700, 2700, 4600, 4600, 4600};
-  if(index1 == length){
+  int notes[42] = {659, 659, 659, 523, 659, 784, 392, 523, 392, 330, 440, 494, 466, 440, 392, 659, 784, 880, 698, 784, 659, 523, 587, 494, 523, 392, 330, 440, 494, 466, 440, 392, 659, 784, 880, 698, 784, 659, 523, 587, 494}; // Angry Birds Theme
+  if (index1 == length) {
     index1 = 0;
-  }
-  else{
+  } else {
     buzzer_set_period(notes[index1]);
     index1++;
   }
@@ -61,15 +58,12 @@ void state_2()
 
 void state_3()
 {
-  int length = 24;
+  int length = 32;
   static int index2 = 0;
-  int notes[24] = {1220, 1260, 1330, 1440, 1490, 1330, 1260, 1490, 1520,
-		   1330, 1260, 1520, 1370, 1290, 1220, 1370, 1330, 1260,
-		   1220, 1260, 1260, 1330, 1260, 1220};
-  if(index2 == length){
+  int notes[32] = {554, 554, 622, 554, 740, 622, 554, 622, 554, 740, 622, 554, 622, 554, 740, 622, 554, 622, 554, 740, 622, 554, 622, 554, 740, 622, 554, 622, 554, 740, 622, 554}; // Careless Whisper Saxophone Part
+  if (index2 == length) {
     index2 = 0;
-  }
-  else {
+  } else {
     buzzer_set_period(notes[index2]);
     index2++;
   }
@@ -77,22 +71,12 @@ void state_3()
 
 void state_4()
 {
-  int length = 112;
+  int length = 52;
   static int index3 = 0;
-  int notes[112] = {
-    1864, 1244,  987, 830, 1661, 1244,  987, 830, 1480, 1244,  987, 830, 1661, 1244,  987, 830,
-    1661, 1108,  932, 739, 1480, 1108,  932, 739, 1318, 1108,  932, 739, 1480, 1108,  932, 739,
-    1661,  987,  830, 659, 1318,  987,  830, 659, 1244,  987,  830, 659, 1318,  987,  830, 659,
-    1318,  932,  739, 622, 1244,  932,  739, 622, 1108,  932,  739, 622, 1244,  932,  739, 622,
-    1864, 1244,  987, 830, 1661, 1244,  987, 830, 1480, 1244,  987, 830, 1661, 1244,  987, 830,
-    1975, 1318, 1108, 783, 1864, 1318, 1108, 783, 1661, 1318, 1108, 783, 1864, 1318, 1108, 783,
-    2217, 1244,  987, 783, 1875, 1244,  987, 783, 1864, 1244,  987, 783, 1975, 1244,  987, 783//,
-    //1864,  987//,  783, 659, 1568,  987,  783, 659, 1480,  987,  783, 659, 1318,  987,  783, 659
-  };//Could not figure out why last 2 measures of notes break code
-  if(index3 == length){
+  int notes[52] = {659, 659, 523, 659, 784, 392, 523, 392, 330, 440, 494, 466, 440, 392, 659, 784, 880, 698, 784, 659, 523, 587, 494, 523, 392, 330, 440, 494, 466, 440, 392, 659, 784, 880, 698, 784, 659, 523, 587, 494, 523, 392, 330, 440, 494, 466, 440, 392, 659, 784, 880, 698}; // Super Mario Bros Theme
+  if (index3 == length) {
     index3 = 0;
-  }
-  else{
+  } else {
     buzzer_set_period(notes[index3]);
     index3++;
   }
